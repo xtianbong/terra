@@ -3,4 +3,4 @@ import time
 
 while True:
     time.sleep(3);
-    print(readTemp())
+    print("Temperature: {}°C, Humidity: {}%".format(readTemp(), readHum()))
