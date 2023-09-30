@@ -1,0 +1,4 @@
+name,max_temp,min_temp,max_hum,min_hum,fan_int,fan_dur
+safs,20,20,20,20,20,20
+Default,20,20,90,80,12,150
+too dry,28,15,92,87,18,120
