@@ -4,8 +4,10 @@ import os
 import RPi.GPIO as GPIO
 from sensor import *
 import time
+from fan_ctrl import *
 from display import *
-
+from logging import *
+import atexit
 # GPIO pin for the push button (BCM numbering)
 BUTTON_PIN = 12
 
@@ -15,9 +17,9 @@ interval_seconds = interval * 3600
 hum_threshold = [70, 90]
 temp_threshold = [20, 30]
 fanning_duration = 60
-
+fanning_timer = 0
 last_fan = 0
-profile_id = 0
+current_profile_id = 0
 
 # Initialize GPIO
 GPIO.setmode(GPIO.BCM)

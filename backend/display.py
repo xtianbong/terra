@@ -1,7 +1,7 @@
 #controls actuators like lights and the display
 import time
 import RPi.GPIO as GPIO
-
+import atexit
 GPIO.setmode(GPIO.BCM)
 
 HIGH_HUM_PIN = 17 

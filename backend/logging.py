@@ -58,4 +58,4 @@ temp_threshold = [20, 30]  # Example threshold values
 last_fan = 2
 hardware_hum = 60.0
 
-save_logs(hum, temp, hum_threshold, temp_threshold, last_fan, hardware_hum)
+#save_logs(hum, temp, hum_threshold, temp_threshold, last_fan, hardware_hum)
