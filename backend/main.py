@@ -183,8 +183,15 @@ while True:
 
         #hardware humidity monitor placed at the end to make sure all data is collected for logs
         hardwareHum = readHardwareHum()
-        if hum >= 70:
+        #hardwareHum = 50
+        if hardwareHum == None:
+            print("HARDWARE HUMIDITY SENSOR OFFLINE SHUTTING DOWN")
+            save_logs(hum, temp, hum_threshold, temp_threshold, last_fan, current_profile_id, hardware_hum)
+            #subprocess.run(["sudo","poweroff"])
+            break
+        if hardwareHum >= 70:
             print("HIGH HUMIDITY IN HARDWARE SHUTTING DOWN")
             save_logs(hum, temp, hum_threshold, temp_threshold, last_fan, current_profile_id, hardware_hum)
-            subprocess.run(["sudo", "poweroff"])
+            #subprocess.run(["sudo", "poweroff"])
+            break
 atexit.register(GPIO.cleanup)
